@@ -1,4 +1,4 @@
 terraform:
   production:
-    region: "australiaeast"
+    region: "us-west-2"
     environment: "production"
