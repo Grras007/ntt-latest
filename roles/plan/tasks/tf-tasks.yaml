@@ -24,14 +24,3 @@
   debug:
     msg: "{{ create_plan.stdout }}"
   when: (operation == "create-plan")
-- name: Create resources
-  shell: |
-    cd {{ playbook_dir }}/tf;
-    terraform workspace select {{ env }}
-    terraform apply plan.tfplan
-  when: (operation == "create")
-  register: create
-- name: "Display output: Create resources"
-  debug:
-    msg: "{{ create.stdout }}"
-  when: (operation == "create")
