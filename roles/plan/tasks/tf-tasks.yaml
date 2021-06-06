@@ -24,3 +24,26 @@
   debug:
     msg: "{{ create_plan.stdout }}"
   when: (operation == "create-plan")
+- name: Create resources
+  shell: |
+    cd {{ playbook_dir }}/tf;
+    terraform workspace select {{ env }}
+    terraform apply plan.tfplan
+  when: (operation == "create")
+  register: create
+- name: "Display output: Create resources"
+  debug:
+    msg: "{{ create.stdout }}"
+  when: (operation == "create")
+- name: Destroy resources
+  shell: |
+    cd {{ playbook_dir }}/tf;
+    terraform workspace new {{ env }}
+    terraform workspace select {{ env }}
+    terraform destroy -var-file=env.tfvars -auto-approve
+  when: (operation == "destroy")
+  register: destroy
+- name: "Display output: Destroy resources"
+  debug:
+    msg: "{{ destroy.stdout }}"
+  when: (operation == "destroy")
