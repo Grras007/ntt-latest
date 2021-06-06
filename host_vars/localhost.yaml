@@ -1,4 +1,5 @@
 terraform:
   production:
     region: "us-west-2"
-    environment: "production"
+    environment: "staging"
+    us-east-2="t2.micro"
