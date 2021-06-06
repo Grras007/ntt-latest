@@ -8,17 +8,17 @@ pipeline{
         }
         stage('Terraform init'){
             steps{
-                sh 'ansible-playbook deploy.yaml -e env=production -e operation=init'
+                sh 'ansible-playbook deploy.yaml -e env=staging -e operation=init'
             }
         }
         stage('Terraform Plan'){
             steps{
-                sh 'ansible-playbook deploy.yaml -e env=production -e operation=create-plan'
+                sh 'ansible-playbook deploy.yaml -e env=staging -e operation=create-plan'
             }
         }
         stage('Terraform Apply'){
             steps{
-                sh 'ansible-playbook deploy.yaml -e env=production -e operation=create'
+                sh 'ansible-playbook deploy.yaml -e env=staging -e operation=create'
             }
         }
     }
