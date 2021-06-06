@@ -1,0 +1,4 @@
+terraform:
+  production:
+    region: "australiaeast"
+    environment: "production"
