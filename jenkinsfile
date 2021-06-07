@@ -16,10 +16,5 @@ pipeline{
                 sh 'ansible-playbook deploy.yaml -e env=staging -e operation=create-plan'
             }
         }
-        stage('Terraform Apply'){
-            steps{
-                sh 'ansible-playbook deploy.yaml -e env=staging -e operation=create'
-            }
-        }
     }
 }
