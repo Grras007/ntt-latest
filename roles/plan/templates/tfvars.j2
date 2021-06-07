@@ -1,2 +1,6 @@
 region = "{{ terraform['%s' | format(env)].region }}"
 environment = "{{ terraform['%s' | format(env)].environment }}"
+instance_type = "{{ terraform['%s' | format(env)].instance_type }}"
+
+#region = "{{ terraform['%s' | format(env)].region }}"
+#environment = "{{ terraform['%s' | format(env)].environment }}"
