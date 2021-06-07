@@ -1,10 +1,20 @@
 variable "region" {
-   default = "us-west-2"
+  type = string
 }
-
 variable "environment" {
   type = string
 }
-variable "instancetype"{
-    default = "t2.micro"
+variable "instance_type"{
+ type = string
 }
+
+#variable "region" {
+#   default = "us-west-2"
+#}
+
+#variable "environment" {
+#  type = string
+#}
+#variable "instancetype"{
+#    default = "t2.micro"
+#}
