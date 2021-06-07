@@ -9,7 +9,7 @@ terraform {
 
 
 provider "aws" {
-  region     = var.region
+  region     = "us-west-2"
   access_key = ""
   secret_key = ""
 }
@@ -17,5 +17,5 @@ provider "aws" {
 
 resource "aws_instance" "myec2" {
    ami = "ami-082b5a644766e0e6f"      ## AMI id will change accordingly   region 
-   instance_type = var.instancetypoe                     
+   instance_type = "t2.micro"                   
 }
